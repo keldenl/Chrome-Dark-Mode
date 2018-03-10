@@ -13,8 +13,7 @@
     },
 
     "background": {
-        "scripts": ["js/stateFunc.js", "js/background.js"],
-        "persistent" : true
+        "scripts": ["js/stateFunc.js", "js/background.js"]
     },
     
     "content_scripts": [
@@ -28,6 +27,7 @@
       "activeTab",
       "storage",
       "tabs",
+      "alarms",
       "*://*/*"
     ]
   }

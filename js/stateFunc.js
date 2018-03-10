@@ -6,7 +6,6 @@
 function setModeState(tabId, state) { // True state = dark mode on
     var filePath = "css/global.css"
     if (!state) filePath = "css/disable-global.css"
-
     chrome.tabs.insertCSS(tabId, {
         file: filePath
     });

@@ -1,6 +1,6 @@
 /* 
     Popup.js Logic
-    Turns on/off dark mode based on checkbox interactions. Updates aesthetics from saved state.
+    Turns on/off dark mode based on checkbox interactions. Updates visuals from saved state.
 */
 
 function getCurrentTabUrl(callback) {
@@ -23,9 +23,17 @@ function getSavedDarkState(callback) {
       });
 }
 
+function getRecentSession(callback) {
+    chrome.storage.sync.get("recentSession", (items) => {
+        callback(chrome.runtime.lastError ? null : items["recentSession"]);
+      });
+}
+
 function saveDarkState(state) {
     var items = {};
     items["state"] = state
+    items["recentSession"] = String(new Date())
+    // console.log(items)
     chrome.storage.sync.set(items)
 }
 
@@ -38,6 +46,13 @@ function updateIconText(checkboxText, state) {
         checkboxText.innerHTML = "Toggle: OFF"
         chrome.browserAction.setIcon({path: "imgs/default-light.png"})
     }
+}
+
+function updateRecentSession() {
+    var sessionContainer = document.getElementById('session')
+    getRecentSession(function(session) {
+        sessionContainer.innerHTML = session
+    })
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -57,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setDarkState(state)
             saveDarkState(state)
             updateIconText(checkboxText, state)
+            updateRecentSession()
         })
     });
 });
