@@ -12,6 +12,7 @@ _Note: I made some changes after the assignment was due, but those were little v
 
 ## What is it?
 ![Extension Screenshot](imgs/screenshot-1.png)
+
 “Chrome Dark Mode” does exactly what the title implies – it changes your webpages’ styles to a slick dark mode websites nowadays rock. Not only that, it will also collect the user’s preference on dark mode based on the data from user usage, and smarty understand and therefore nicely graph that collected information. As a stretch goal, I could possibly even adapt and learn from that collected data and as a feature turn on and off the extension based on the user’s preferences and habits. 
 
 ## Sample Dark Mode Websites
