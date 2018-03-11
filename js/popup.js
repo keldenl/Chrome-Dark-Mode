@@ -32,8 +32,8 @@ function getRecentSession(callback) {
 function saveDarkState(state) {
     var items = {};
     items["state"] = state
-    items["recentSession"] = String(new Date())
-    // console.log(items)
+    if(!state) items["recentSession"] = String(new Date()) // Update last session only when disabling
+    else getRecentSession(function(session) { items["recentSession"] = session })
     chrome.storage.sync.set(items)
 }
 
@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         getSavedDarkState((state) => {
             checkbox.checked = state
             updateIconText(checkboxText, state)
+            updateRecentSession()
         })
 
         // Check for checkbox toggles

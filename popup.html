@@ -6,12 +6,12 @@
       body {
         margin: 10px;
         white-space: nowrap;
+        width: 100%;
+        overflow: visible;
       }
-
-      h1 {
-        font-size: 15px;
-      }
-
+      h1 { font-size: 15px; }
+      #session-title, #session { margin: 0; padding: 0; }
+      #session { font-size: 10px; opacity: .5; }
       #container {
         align-items: center;
         display: flex;
@@ -31,6 +31,7 @@
       <span><input id="checkBox" type="checkbox"><span id="checkbox-text"> Toggle: OFF </span></span>
     </div>
 
-    <p>Recent Session: </p><span id="session"></span>
+    <p id="session-title"> Recent Session:<p id="session"></p></p>
+
   </body>
 </html>
