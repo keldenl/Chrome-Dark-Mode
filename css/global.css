@@ -1,4 +1,6 @@
 html, iframe, img, video {
     background-color: white;
-    -webkit-filter: invert() hue-rotate(180deg) brightness(105%) contrast(105%)!important
+    -webkit-filter: invert(95%) hue-rotate(180deg) brightness(110%) contrast(90%)!important;
 }
+
+/* -webkit-filter: invert() hue-rotate(180deg) brightness(105%) contrast(105%)!important */

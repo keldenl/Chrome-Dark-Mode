@@ -3,7 +3,7 @@
 
     "name": "Chrome Dark Mode",
     "description": "This extension allows the user to activate dark mode on any website.",
-    "version": "1.0.1",
+    "version": "1.0.2",
 
     "icons": {
         "100": "imgs/default-dark.png"
